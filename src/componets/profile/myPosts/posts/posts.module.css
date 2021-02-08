@@ -1,5 +1,7 @@
 .item {
-  background-color: rgb(156, 18, 18);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .item img {
   width: 50px;

@@ -3,7 +3,7 @@ import s from "./sidebar.module.css";
 const Sidebar = () => {
   return (
     <div className={s.wrapper}>
-      <ul>
+      <ul className={s.nav}>
         <li className={s.item}>CSS</li>
         <li className={s.item}>HTML</li>
         <li className={s.item}>JAVASCRIPT</li>

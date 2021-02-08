@@ -1,5 +1,5 @@
 import "./App.css";
-import Sidebar from "./componets/sidebar/Sidebar";
+import Sidebar from "./componets/sidebar/sidebar";
 import Header from "./componets/header/header";
 import Profile from "./componets/profile/profile";
 import Footer from "./componets/Footer";

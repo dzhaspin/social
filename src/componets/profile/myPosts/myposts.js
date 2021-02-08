@@ -1,9 +1,9 @@
-import s from "./myposts.module.css";
 import Post from "./posts/posts";
+import s from "./myposts.module.css";
 
 const MyPost = () => {
   return (
-    <div>
+    <div className={s.wrap}>
       <p>My posts</p>
       <textarea name="" id="" cols="50" rows="3"></textarea>
       <button>Add Post</button>
