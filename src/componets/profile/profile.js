@@ -8,7 +8,7 @@ const Profile = () => {
         src="https://sun9-2.userapi.com/c846520/v846520585/15bc3a/b-vxM7RMYmQ.jpg"
         alt="Alt"
       />
-      <MyPost />
+      <MyPost mypost="Hello, My name is Nurlan" />
     </div>
   );
 };
