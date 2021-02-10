@@ -1,0 +1,17 @@
+.block {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+.name {
+  font-size: 20px;
+}
+.message {
+  font-size: 20px;
+  color: green;
+}
+.item {
+  padding: 10px;
+}
+.item.active {
+  color: gold;
+}

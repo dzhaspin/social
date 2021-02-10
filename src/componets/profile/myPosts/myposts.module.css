@@ -1,6 +1,9 @@
 .wrap {
   padding-left: 25px;
 }
+.posts {
+  margin-top: 25px;
+}
 .posts .item img {
   width: 50px;
   height: 50px;

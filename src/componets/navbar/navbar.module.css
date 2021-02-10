@@ -1,0 +1,20 @@
+.nav {
+  padding: 50px 25px;
+}
+.nav li {
+  padding: 5px 0;
+  color: #bcec0ece;
+  font-size: 1em;
+}
+.nav li a {
+  padding: 5px 0;
+  color: #616161;
+  font-size: 1em;
+}
+.nav li a:hover {
+  cursor: pointer;
+  color: #0077ff;
+}
+.nav li a:active {
+  color: #0066da;
+}
