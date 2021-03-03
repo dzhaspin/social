@@ -1,12 +1,18 @@
+import React from "react";
 import "./profile.module.css";
 import MyPost from "./myPosts/myposts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div>
       <ProfileInfo />
-      <MyPost mypost="Hello, My name is Nurlan" />
+      <MyPost
+        posts={props.profilePage.posts}
+        newPostText={props.profilePage.newPostText}
+        updateNewPostText={props.updateNewPostText}
+        addPost={props.addPost}
+      />
     </div>
   );
 };

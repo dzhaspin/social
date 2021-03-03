@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import s from "./navbar.module.css";
-// console.log(s);
+
 const Navbar = () => {
   return (
     <div>
@@ -9,7 +9,28 @@ const Navbar = () => {
           <NavLink to="profile">Profile</NavLink>
         </li>
         <li>
-          <NavLink to="dialogs">Dialogs</NavLink>
+          <NavLink to="dialogs">Messages</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Friends</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Communities</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Photos</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Music</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Videos</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Clips</NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">Games</NavLink>
         </li>
       </ul>
     </div>

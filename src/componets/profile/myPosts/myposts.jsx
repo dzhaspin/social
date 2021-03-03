@@ -1,31 +1,36 @@
+import React from "react";
 import Post from "./posts/posts";
 import s from "./myposts.module.css";
 
 const MyPost = (props) => {
-  let postData = [
-    { id: 0, name: "Dmitriy", message: "Hi, how are you?", likesCount: 14 },
-    { id: 1, name: "Ivan", message: "hello, I'm fine, thanks", likesCount: 9 },
-  ];
+  let postsElements = props.posts.map((p) => (
+    <Post name={p.name} message={p.message} likesCount={p.likesCount} />
+  ));
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    props.addPost();
+  };
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  };
+
   return (
     <div className={s.wrap}>
-      <h4>{props.mypost}</h4>
+      <h4>"Hello, My name is Nurlan"</h4>
       <div>
-        <textarea name="" id="" cols="50" rows="3"></textarea>
+        <textarea
+          onChange={onPostChange}
+          ref={newPostElement}
+          value={props.newPostText}
+        />
       </div>
-      <button>Опубликовать</button>
+      <button onClick={addPost}>Опубликовать</button>
 
-      <div className={s.posts}>
-        <Post
-          name={postData[0].name}
-          message={postData[0].message}
-          likesCount={postData[0].likesCount}
-        />
-        <Post
-          name={postData[1].name}
-          message={postData[1].message}
-          likesCount={postData[1].likesCount}
-        />
-      </div>
+      <div className={s.postsClass}>{postsElements}</div>
     </div>
   );
 };
