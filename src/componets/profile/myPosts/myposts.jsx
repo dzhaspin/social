@@ -8,8 +8,9 @@ const MyPost = (props) => {
   ));
 
   let newPostElement = React.createRef();
+  // debugger;
 
-  let addPost = () => {
+  let onAddPost = () => {
     props.addPost();
   };
 
@@ -28,7 +29,7 @@ const MyPost = (props) => {
           value={props.newPostText}
         />
       </div>
-      <button onClick={addPost}>Опубликовать</button>
+      <button onClick={onAddPost}>Опубликовать</button>
 
       <div className={s.postsClass}>{postsElements}</div>
     </div>
