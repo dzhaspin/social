@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
+import { Route } from "react-router-dom";
 import Navbar from "./componets/navbar/navbar";
 import Header from "./componets/header/header";
 import Profile from "./componets/profile/profile";
 import DialogsContainer from "./componets/dialogs/DialogsContainer";
-// import Footer from "./Footer";
-import { Route } from "react-router-dom";
+import UsersContainer from "./componets/Users/UsersContainer";
+import "./App.css";
 
 const App = (props) => {
   return (
@@ -17,26 +17,9 @@ const App = (props) => {
             <Navbar />
           </div>
           <div className="content-block">
-            <Route
-              path="/profile"
-              render={() => (
-                <Profile
-                  store={props.store}
-                  // profilePage={props.state.profilePage}
-                  // dispatch={props.dispatch}
-                />
-              )}
-            />
-            <Route
-              path="/dialogs"
-              render={() => (
-                <DialogsContainer
-                  store={props.store}
-                  // profilePage={props.state.profilePage}
-                  // dispatch={props.dispatch}
-                />
-              )}
-            />
+            <Route path="/profile" render={() => (<Profile />)} />
+            <Route path="/dialogs" render={() => (<DialogsContainer />)} />
+            <Route path="/users" render={() => (<UsersContainer />)} />
           </div>
         </div>
       </div>
