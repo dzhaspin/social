@@ -1,43 +1,36 @@
 import React from "react";
 import style from './users.module.css';
+import userPhoto from '../../img/users/user.png'
+import Preloader from "../common/Preloader/Preloader";
 
-const Users = (props) => {
-  if (props.users.length === 0) {
-    props.setUsers([
-      {
-        id: 1,
-        photoUrl: 'https://w7.pngwing.com/pngs/160/371/png-transparent-computer-icons-user-profile-computer-software-user-miscellaneous-purple-violet.png',
-        followed: false,
-        fullName: 'Dmitry',
-        status: 'I am a boss',
-        location: { city: 'Minsk', country: 'Belarus' }
-      },
-      {
-        id: 2,
-        photoUrl: 'https://w7.pngwing.com/pngs/160/371/png-transparent-computer-icons-user-profile-computer-software-user-miscellaneous-purple-violet.png',
-        followed: true,
-        fullName: 'Sasha',
-        status: 'I am a boss too',
-        location: { city: 'Moscow', country: 'Russia' }
-      },
-      {
-        id: 3,
-        photoUrl: 'https://w7.pngwing.com/pngs/160/371/png-transparent-computer-icons-user-profile-computer-software-user-miscellaneous-purple-violet.png',
-        followed: false,
-        fullName: 'Andrew',
-        status: 'I am a boss too',
-        location: { city: 'Kiev', country: 'Ukraine' }
-      }
-    ]
-    )
+let Users = (props) => {
+
+  let pageCount = Math.ceil(props.totalUsersCount / props.pageSize)
+
+  let pages = [];
+  for (let i = 1; i < pageCount; i++) {
+    pages.push(i);
   }
 
   return <div className={style.wrap}>
+    <ul className={style.paginate}>
+      {pages.map(p => {
+        return <li className={props.currentPage === p && style.paginateActive}
+          onClick={() => { props.onPageChanged(p) }}>{p}</li>
+      })}
+    </ul>
+
+    {props.isFetching ?
+      <Preloader />
+      : null}
+
     {
       props.users.map(u => <div key={u.id} className={style.item}>
         <div className={style.photo}>
           <div>
-            <img src={u.photoUrl} className={style.userimg} />
+            <img src={u.photos.small != null
+              ? u.photos.small : userPhoto}
+              className={style.userimg} />
           </div>
           <div>
             {u.followed
@@ -47,18 +40,17 @@ const Users = (props) => {
         </div>
         <div className={style.descr}>
           <span>
-            <div>{u.fullName}</div>
+            <div>{u.name}</div>
             <div>{u.status}</div>
           </span>
           <span>
-            <div>{u.location.country}</div>
-            <div>{u.location.city}</div>
+            <div>{'u.location.country'}</div>
+            <div>{'u.location.city'}</div>
           </span>
         </div>
       </div>)
     }
   </div>
-
-};
+}
 
 export default Users;

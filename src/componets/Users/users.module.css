@@ -1,5 +1,6 @@
 .wrap {
-    padding: 40px;
+    position: relative;
+    padding: 40px; 
 }
 .item {
     display: flex;
@@ -21,4 +22,36 @@
     width: 100%;
     padding: 20px;
     margin-left: 10px;
+}
+.paginate {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+.paginate li  {
+    display: flex;
+    margin: 0 2px;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 4px;
+    display: flex;
+}
+.paginate li:hover  {
+    cursor: pointer;
+    background-color: rgb(12, 107, 231);
+    color: #fff;
+}
+.paginateActive{
+    background-color: rgb(12, 107, 231);
+    font-weight: bold;
+    color: #fff;
+}
+.preloaderWrap{
+    background-color: #e5e5e5;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
