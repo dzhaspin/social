@@ -33,6 +33,7 @@ li {
 }
 .content-block {
   margin-left: 260px;
-  background-color: #e5e5e5;
+  /* background-color: #e5e5e5; */
   width: 100%;
+  overflow: hidden;
 }

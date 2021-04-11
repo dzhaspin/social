@@ -7,6 +7,13 @@
   box-shadow: 0 1px 7.5px rgba(0, 0, 0, 0.37);
   z-index: 1000;
 }
+.headerWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.login a{
+  color: #fff;
+}
 .header .logo {
   padding-left: 24px;
 }

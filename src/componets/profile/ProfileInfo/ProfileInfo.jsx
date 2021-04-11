@@ -1,6 +1,10 @@
+import Preloader from "../../common/Preloader/Preloader";
 import s from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />
+  }
   return (
     <div>
       <div className={s.bg}>
@@ -13,9 +17,13 @@ const ProfileInfo = () => {
       <div className={s.wrap}>
         <div className={s.avatar}>
           <img
-            src="https://yt3.ggpht.com/a/AATXAJzsQ_nWMY5Ztfc2Z8UBB4q-i4ZkP1JAfU6iNzpZ=s900-c-k-c0xffffffff-no-rj-mo"
+            src={props.profile.photos.large}
             alt="Alt"
           />
+          {/* <img
+            src="https://yt3.ggpht.com/a/AATXAJzsQ_nWMY5Ztfc2Z8UBB4q-i4ZkP1JAfU6iNzpZ=s900-c-k-c0xffffffff-no-rj-mo"
+            alt="Alt"
+          /> */}
         </div>
         <div className={s.descr}>
           <h4>Nurlan Dzhaspinov</h4>

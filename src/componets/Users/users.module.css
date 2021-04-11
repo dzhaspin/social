@@ -1,6 +1,7 @@
 .wrap {
     position: relative;
     padding: 40px; 
+
 }
 .item {
     display: flex;
@@ -28,13 +29,13 @@
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
+    overflow-y: auto;
 }
 .paginate li  {
     display: flex;
     margin: 0 2px;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    padding: 0 4px;
     border: 1px solid rgb(134, 134, 134);
     border-radius: 4px;
     display: flex;
@@ -50,8 +51,13 @@
     color: #fff;
 }
 .preloaderWrap{
-    background-color: #e5e5e5;
+    background-color: #fff;
     position: absolute;
+    left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
